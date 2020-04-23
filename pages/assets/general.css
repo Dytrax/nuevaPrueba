@@ -1,0 +1,15 @@
+@charset "UTF-8";
+/* body {  background-image: linear-gradient(rgb(24, 36, 77), rgb(0, 0, 0));    background-repeat: no-repeat;   background-attachment: fixed;   height: 100vh;   color: lightgray; } */
+.imgMicro {
+    height: 80px;
+    width: 80px;
+    resize: contain;
+    transition: all 0.3s ease-in-out;
+    
+}
+/* .imgMicro:hover {
+    transform:scale(1.3) translateX(100px);
+    
+} */
+/*     object-fit: contain;
+ */

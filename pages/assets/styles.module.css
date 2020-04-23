@@ -1,0 +1,10 @@
+@charset "UTF-8";
+
+.imgMicro{
+    height: 150px;
+    width: 150px;
+    resize: contain;
+    
+}
+/*     object-fit: contain;
+ */
