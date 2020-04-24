@@ -1,4 +1,5 @@
 export default (req, res) => {
+    console.log('recibido')
     if (req.method === 'POST') {
       // Process a POST request
       console.log(JSON.stringify(res))
