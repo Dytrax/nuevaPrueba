@@ -10,11 +10,29 @@ export default class PostLogin extends Component {
     };
   }
   enviarFetch(){
-    fetch("estacion.herokuapp.com/api/data")
+    try{
+    
+      const query = await fetch("estacion.herokuapp.com/api/data" ,{  
+            method: 'GET', 
+            headers: {
+              'Accept': 'application/json',
+              'Content-Type': 'application/json',
+            },
+          
+          })
+          let responseJson = await query
+          this.setState({data:responseJson})
+          console.log(responseJson)
+          //return [ query.status,responseJson]
+  
+      }catch(error){
+        console.error(error)
+      } 
+    /* fetch("estacion.herokuapp.com/api/data")
     .then((res) => {
       this.setState({data:res})
       
-    })
+    }) */
   }
   componentDidMount(){
     this.enviarFetch()
