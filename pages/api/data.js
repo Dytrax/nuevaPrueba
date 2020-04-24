@@ -5,5 +5,7 @@ export default (req, res) => {
       console.log(JSON.stringify(res))
     } else {
       // Handle any other HTTP method
+      
     }
+    return "Recibido"
   }
