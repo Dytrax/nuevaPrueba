@@ -4,22 +4,48 @@ export default class PostLogin extends Component {
 
   constructor(props) {
     super(props);
-    this.state = {date: new Date(),
-    login:false,
-    data:['data1','dato2','data3','dato4','data5','dato6']
+    this.state = {
+      date: new Date(),
+      login: false,
+      //data:['data1','dato2','data3','dato4','data5','dato6']
+      data: []
     };
   }
-  enviarFetch = async () =>{
+  fetchWithTimeOut(url, options, timeout = 100000) {
+    return Promise.race([fetch(url, options), new Promise((_, reject) => setTimeout(() => reject(new Error('timeout')), timeout))]);
+  }
+
+  enviarFetch = async () => {
+    //https://estacion.herokuapp.com/api/data
     console.log('enviando fetch')
-    const res = await fetch('http://estacion.herokuapp.com/api/data')     
-    console.log('Recibido1 fetch') 
+/*     const res = await fetch('http://localhost:3000/api/data')     
+ */   
+      const res = await this.fetchWithTimeOut('http://estacion.herokuapp.com/api/data', {
+        method: 'POST',
+        headers: {
+          'Accept': 'application/json',
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          client: this.state.data.length
+        })
+
+
+
+      },120000)
+
+      console.log('Recibido1 fetch')
     const json = await res.json()
-    console.log('Recibido2 fetch') 
+    console.log('Recibido2 fetch')
     console.log(res)
     console.log(json)
-    this.setState({data:json})    
-    
+    this.setState({ data: json })
+
     this.enviarFetch()
+    
+
+
+    
     /* try{
     
       const query = await fetch("estacion.herokuapp.com/api/data" ,{  
@@ -44,27 +70,29 @@ export default class PostLogin extends Component {
       
     }) */
   }
-  componentDidMount(){
-  
+  componentDidMount() {
+
     this.enviarFetch()
   }
 
-  
-  render () {
-  return (
-    <div style={{width:'100%'}}>
-      <ul style={{height:'500px',overflowY:'scroll'}}>
-        {this.state.data.reverse().map(
-          (value,index)=>{
-            return(<li>
-              {value
-              }
-            </li>)
-          }
 
-        )}
-      </ul>
-      
-    </div>
-  )}
+  render() {
+    return (
+      <div style={{ width: '100%' }}>
+        {this.state.data.length}
+        <ul style={{ height: '500px', overflowY: 'scroll' }}>
+          {this.state.data.reverse().map(
+            (value, index) => {
+              return (<li>
+                {JSON.stringify(value)
+                }
+              </li>)
+            }
+
+          )}
+        </ul>
+
+      </div>
+    )
+  }
 }
