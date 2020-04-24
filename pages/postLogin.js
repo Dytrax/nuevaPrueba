@@ -39,7 +39,7 @@ export default class PostLogin extends Component {
 
       console.log('Recibido1 fetch')
     const json = await res.json()
-    if(json.success){
+    if(res.success){
       console.log('success')
       this.setState({ data: json })
     }else{
