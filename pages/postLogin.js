@@ -9,6 +9,16 @@ export default class PostLogin extends Component {
     data:['data1','dato2','data3','dato4','data5','dato6']
     };
   }
+  enviarFetch(){
+    fetch("estacion.herokuapp.com/api/data")
+    .then((res) => {
+      this.setState({data:res})
+      this.enviarFetch()
+    })
+  }
+  componentDidMount(){
+    this.enviarFetch()
+  }
 
   
   render () {
