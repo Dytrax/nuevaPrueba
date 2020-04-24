@@ -19,9 +19,9 @@ export default class PostLogin extends Component {
     //DDDhttps://estacion.herokuapp.com/api/data
     console.log('enviando fetch')
 /*     const res = await fetch('http://localhost:3000/api/data')     
- */   try{
+ */   try {
 
- 
+
       const res = await this.fetchWithTimeOut('https://estacion.herokuapp.com/api/data', {
         method: 'POST',
         headers: {
@@ -34,29 +34,29 @@ export default class PostLogin extends Component {
 
 
 
-      },172800000)
-    
+      }, 172800000)
+
 
       console.log('Recibido1 fetch')
-    const json = await res.json()
-  
-    console.log('success')
-    this.setState({ data: json })
-    
-  
-    console.log('Recibido2 fetch')
-    console.log(res)
-    console.log(json)
-    
-  }catch(e){
-    console.log(e)
-    //alert(e)
-  }
+      const json = await res.json()
+
+      console.log('success')
+      this.setState({ data: json })
+
+
+      console.log('Recibido2 fetch')
+      console.log(res)
+      console.log(json)
+
+    } catch (e) {
+      console.log(e)
+      //alert(e)
+    }
     this.enviarFetch()
-    
 
 
-    
+
+
     /* try{
     
       const query = await fetch("estacion.herokuapp.com/api/data" ,{  
@@ -93,9 +93,18 @@ export default class PostLogin extends Component {
         {this.state.data.length}
         <ul style={{ height: '500px', overflowY: 'scroll' }}>
           {this.state.data.reverse().map(
-            (value, index) => {
+            (datoRecibidos, index) => {
               return (<li>
-                {JSON.stringify(value)
+                {
+                  datoRecibidos.keys().map((key) => {
+                    return (
+                      <div>
+                        <h5><strong>{key}</strong></h5>
+                        <h5>{datoRecibidos[key]}</h5>
+                      </div>
+                    )
+                  })
+                  //JSON.stringify(value)
                 }
               </li>)
             }
