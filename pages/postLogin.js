@@ -9,7 +9,7 @@ export default class PostLogin extends Component {
     data:['data1','dato2','data3','dato4','data5','dato6']
     };
   }
-  enviarFetch(){
+  enviarFetch = async () =>{
     const res = await fetch('estacion.herokuapp.com/api/data')     
     const json = await res.json()
     console.log(res)
