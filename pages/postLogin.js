@@ -95,7 +95,7 @@ export default class PostLogin extends Component {
           {this.state.data.reverse().map(
             (value, index) => {
               return (<li>
-                {JSON.stringify(value)
+                {JSON.parse(value)
                 }
               </li>)
             }
