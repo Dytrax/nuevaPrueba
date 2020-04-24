@@ -96,16 +96,16 @@ export default class PostLogin extends Component {
             (datoRecibidos, index) => {
               return (<li>
                 {
-                  <div>{datoRecibidos}</div>
+                  
                   //JSON.stringify(datoRecibidos)
-                  /* datoRecibidos.keys().map((key) => {
+                  Object.keys(datoRecibidos).map((key) => {
                     return (
                       <div>
                         <h5><strong>{key}</strong></h5>
                         <h5>{datoRecibidos[key]}</h5>
                       </div>
                     )
-                  }) */
+                  })
                   
                 }
               </li>)
