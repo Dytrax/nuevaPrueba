@@ -1,13 +1,16 @@
+var data = []
 export default (req, res) => {
-    console.log('recibido1')
+    //console.log(req)
     if (req.method === 'POST') {
       // Process a POST request
       res.status(200).json('ok')
       
       
-    } else {
+    } else if(req.method === 'GET') {
       // Handle any other HTTP method
-      console.log('No Llego')
+      res.status(200).json('ok')
+    }else{
+        res.status(404).json('paila')
     }
     
     
