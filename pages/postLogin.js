@@ -19,7 +19,9 @@ export default class PostLogin extends Component {
     //DDDhttps://estacion.herokuapp.com/api/data
     console.log('enviando fetch')
 /*     const res = await fetch('http://localhost:3000/api/data')     
- */   
+ */   try{
+
+ 
       const res = await this.fetchWithTimeOut('https://estacion.herokuapp.com/api/data', {
         method: 'POST',
         headers: {
@@ -33,14 +35,24 @@ export default class PostLogin extends Component {
 
 
       },172800000)
+    
 
       console.log('Recibido1 fetch')
     const json = await res.json()
+    if(json.success){
+      console.log('success')
+      this.setState({ data: json })
+    }else{
+      console.log('error')
+    }
+  
     console.log('Recibido2 fetch')
     console.log(res)
     console.log(json)
-    this.setState({ data: json })
-
+    
+  }catch(e){
+    alert('no se pudo conectar al backend')
+  }
     this.enviarFetch()
     
 
