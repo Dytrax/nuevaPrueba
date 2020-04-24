@@ -49,8 +49,8 @@ export default class PostLogin extends Component {
     console.log(json)
     
   }catch(e){
-
-    alert(e)
+    console.log(e)
+    //alert(e)
   }
     this.enviarFetch()
     
