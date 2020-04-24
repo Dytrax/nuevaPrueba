@@ -32,7 +32,7 @@ export default class PostLogin extends Component {
 
 
 
-      },120000)
+      },172800000)
 
       console.log('Recibido1 fetch')
     const json = await res.json()
