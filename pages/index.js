@@ -16,7 +16,7 @@ export default class extends Component {
   constructor(props) {
     super(props);
     this.state = {date: new Date(),
-    login:true
+    login:false
     };
   }
   checkLogin(){ 
