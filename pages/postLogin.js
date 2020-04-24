@@ -90,7 +90,8 @@ export default class PostLogin extends Component {
   render() {
     return (
       <div style={{ width: '100%' }}>
-        {this.state.data.length}
+        <h3>Cantidad de datos recibidos: {this.state.data.length}</h3>
+        
         <ul style={{ height: '500px', overflowY: 'scroll' }}>
           {this.state.data.reverse().map(
             (datoRecibidos, index) => {
