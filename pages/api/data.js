@@ -4,8 +4,8 @@ export default (req, res) => {
     console.log(req)
     console.log('req.body')
     console.log(req.body)
-    console.log('req.json')
-    console.log(req.json)
+    console.log('res.json')
+    console.log(res.json)
     if (req.method === 'POST') {
       // Process a POST request
       res.status(200).json('ok')
