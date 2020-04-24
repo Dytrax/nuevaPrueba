@@ -102,7 +102,7 @@ export default class PostLogin extends Component {
                     return (
                       <div>
                         <h5><strong>{key}</strong></h5>
-                        <h5>{datoRecibidos[key]}</h5>
+                        <h5>{JSON.stringify(datoRecibidos[key])}</h5>
                       </div>
                     )
                   })
