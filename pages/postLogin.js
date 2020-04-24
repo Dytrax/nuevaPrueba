@@ -13,7 +13,7 @@ export default class PostLogin extends Component {
     fetch("estacion.herokuapp.com/api/data")
     .then((res) => {
       this.setState({data:res})
-      this.enviarFetch()
+      
     })
   }
   componentDidMount(){
