@@ -85,7 +85,7 @@ export default class extends Component {
           target="_blank"
           rel="noopener noreferrer"
         >
-          Powered by El Calvete<img src="/zeit.svg" alt="ZEIT Logo" />
+          <img src="/zeit.svg" alt="ZEIT Logo" />
         </a>
       </footer>
 
