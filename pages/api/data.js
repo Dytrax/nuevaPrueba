@@ -5,7 +5,7 @@ export default async (req, res) => {
     
     console.log('req.body')
     console.log(req.body)
-    
+    console.log(req.connection.remoteAddress)
     if (req.method === 'POST') {
         if(req.body.hasOwnProperty('client') ){
            try{
@@ -23,7 +23,7 @@ export default async (req, res) => {
            
             
             /* .then(()=>{ */
-            console.log('Recibido GET')
+            console.log('Recibido POST')
             res.status(200).json(dataEnviar)
         /* }) */
             console.log('saliendo')
