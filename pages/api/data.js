@@ -1,7 +1,6 @@
 var data = []
 export default (req, res) => {
-    console.log('req')
-    console.log(req)
+    
     console.log('req.body')
     console.log(req.body)
     console.log('res.json')
