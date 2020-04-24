@@ -10,7 +10,13 @@ export default class PostLogin extends Component {
     };
   }
   enviarFetch(){
-    try{
+    const res = await fetch('estacion.herokuapp.com/api/data')     
+    const json = await res.json()
+    console.log(res)
+    console.log(json)
+    this.setState({data:json})     
+    this.enviarFetch()
+    /* try{
     
       const query = await fetch("estacion.herokuapp.com/api/data" ,{  
             method: 'GET', 
@@ -27,7 +33,7 @@ export default class PostLogin extends Component {
   
       }catch(error){
         console.error(error)
-      } 
+      }  */
     /* fetch("estacion.herokuapp.com/api/data")
     .then((res) => {
       this.setState({data:res})
