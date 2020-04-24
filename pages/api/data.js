@@ -12,6 +12,7 @@ export default (req, res) => {
       
     } else if(req.method === 'GET') {
       // Handle any other HTTP method
+      console.log('Recibido GET')
       res.status(200).json(data)
     }else{
         res.status(404).json('paila')

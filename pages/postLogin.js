@@ -10,11 +10,15 @@ export default class PostLogin extends Component {
     };
   }
   enviarFetch = async () =>{
+    console.log('enviando fetch')
     const res = await fetch('http://estacion.herokuapp.com/api/data')     
+    console.log('Recibido1 fetch') 
     const json = await res.json()
+    console.log('Recibido2 fetch') 
     console.log(res)
     console.log(json)
-    this.setState({data:json})     
+    this.setState({data:json})    
+    
     this.enviarFetch()
     /* try{
     
@@ -41,6 +45,7 @@ export default class PostLogin extends Component {
     }) */
   }
   componentDidMount(){
+  
     this.enviarFetch()
   }
 
