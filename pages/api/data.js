@@ -1,12 +1,12 @@
 export default (req, res) => {
-    console.log('recibido')
+    console.log('recibido1')
     if (req.method === 'POST') {
       // Process a POST request
-      console.log('recibido')
+      console.log('recibido2')
     } else {
       // Handle any other HTTP method
-      console.log('recibido')
+      console.log('No Llego')
     }
-    console.log('recibido')
+    
     
   }
