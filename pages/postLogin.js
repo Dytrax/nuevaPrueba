@@ -49,7 +49,8 @@ export default class PostLogin extends Component {
     console.log(json)
     
   }catch(e){
-    alert('no se pudo conectar al backend')
+
+    alert(e)
   }
     this.enviarFetch()
     
